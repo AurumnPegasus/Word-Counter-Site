@@ -1,0 +1,41 @@
+<h1>
+	{% if count == 1 %}
+		There is {{ count }} word in your text
+	{% else %}
+		There are {{ count }} words in your text
+	{% endif %}
+</h1>
+
+<a href="{% url 'homepage' %}">Satisfied?Start again for another dataset</a>
+
+<h2>
+	Full Text:
+</h2>
+
+{{ fulltext }}
+
+<h2>
+	Count per word is
+</h2>
+<style>
+	table, th, td {
+	border: 1px solid black;
+}
+	td{
+		padding-left: 15px;
+	}
+</style>
+
+<table style="width:100%">
+	<tr>
+		<th>The word</th>
+		<th>Number of Occurances</th>
+	</tr>
+	{% for word, counttotal in sortedwords %}
+		<tr>
+			<td>{{ word }}</td>
+			<td>{{ counttotal }}</td>
+		</tr>
+	{% endfor %}
+</table>
+
