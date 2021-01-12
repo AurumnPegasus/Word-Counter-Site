@@ -3,7 +3,7 @@
 # trying o
 import os
 import sys
-
+# this is a commen
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wordcount.settings')
